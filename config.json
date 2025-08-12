@@ -8,41 +8,37 @@
   "lang": {
     "en-US": {
       "name": "Custom Activity",
-      "description": "My custom activity for Journey Builder"
+      "description": "A simple custom activity for Journey Builder"
     }
   },
   "arguments": {
     "execute": {
-      "url": "https://your-render-url.onrender.com/execute",
+      "inArguments": [],
+      "outArguments": [],
+      "url": "https://custom-activity-ubrc.onrender.com/execute",
       "verb": "POST",
       "body": "",
       "header": "",
       "format": "json",
-      "timeout": 10000
+      "useJwt": false
     }
   },
   "configurationArguments": {
     "publish": {
-      "url": "https://your-render-url.onrender.com/publish"
+      "url": "https://custom-activity-ubrc.onrender.com/publish"
     },
     "validate": {
-      "url": "https://your-render-url.onrender.com/validate"
+      "url": "https://custom-activity-ubrc.onrender.com/validate"
     },
     "stop": {
-      "url": "https://your-render-url.onrender.com/stop"
+      "url": "https://custom-activity-ubrc.onrender.com/stop"
     }
   },
   "userInterfaces": {
     "configModal": {
-      "url": "https://your-render-url.onrender.com/ui"
-    }
-  },
-  "schema": {
-    "arguments": {
-      "execute": {
-        "inArguments": [],
-        "outArguments": []
-      }
+      "url": "https://custom-activity-ubrc.onrender.com/index.html",
+      "height": 400,
+      "width": 600
     }
   }
 }
