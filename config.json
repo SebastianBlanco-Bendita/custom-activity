@@ -1,0 +1,44 @@
+{
+  "workflowApiVersion": "1.1",
+  "metaData": {
+    "icon": "https://TU-APP.herokuapp.com/icon.png",
+    "category": "message"
+  },
+  "type": "REST",
+  "lang": {
+    "en-US": {
+      "name": "Hola Mundo Activity",
+      "description": "Una actividad personalizada de ejemplo"
+    }
+  },
+  "arguments": {
+    "execute": {
+      "inArguments": [],
+      "outArguments": [],
+      "url": "https://TU-APP.herokuapp.com/execute",
+      "verb": "POST",
+      "body": "",
+      "header": "",
+      "format": "json",
+      "useJwt": false
+    }
+  },
+  "configurationArguments": {
+    "publish": {
+      "url": "https://TU-APP.herokuapp.com/publish"
+    },
+    "validate": {
+      "url": "https://TU-APP.herokuapp.com/validate"
+    },
+    "stop": {
+      "url": "https://TU-APP.herokuapp.com/stop"
+    }
+  },
+  "userInterfaces": {
+    "configModal": {
+      "url": "https://TU-APP.herokuapp.com/hola-mundo-custom-activity.html",
+      "height": 400,
+      "width": 600
+    }
+  }
+}
