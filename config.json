@@ -18,10 +18,10 @@
         {
           "message": "{{Interaction.REST-1.message}}",
           "contactKey": "{{Contact.Key}}",
-          "email": "{{Contact.Attribute.NOMBRE_DE_TU_DE.Mail}}",
-          "firstName": "{{Contact.Attribute.NOMBRE_DE_TU_DE.FirstName}}",
-          "city": "{{Contact.Attribute.NOMBRE_DE_TU_DE.City}}",
-          "interestCategory": "{{Contact.Attribute.NOMBRE_DE_TU_DE.InterestCategory}}"
+          "email": "{{Contact.Attribute.TestCustomActivity.Mail}}",
+          "firstName": "{{Contact.Attribute.TestCustomActivity.FirstName}}",
+          "city": "{{Contact.Attribute.TestCustomActivity.City}}",
+          "interestCategory": "{{Contact.Attribute.TestCustomActivity.InterestCategory}}"
         }
       ],
       "outArguments": [],
