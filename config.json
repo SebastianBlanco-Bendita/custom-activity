@@ -25,7 +25,7 @@
         }
       ],
       "outArguments": [],
-      "url": "https://custom-activity-ubrc.onrender.com/execute",
+      "url": "https://custom-activity-4spk.onrender.com/execute",
       "verb": "POST",
       "body": "",
       "header": "",
@@ -35,31 +35,31 @@
     }
   },
   "configurationArguments": {
-    "applicationExtensionKey": "YOUR_APP_EXTENSION_KEY",
+    "applicationExtensionKey": "1e112843e-1b6a-4415-a5ea-a025e0e5164",
     "save": {
-      "url": "https://custom-activity-ubrc.onrender.com/save",
+      "url": "https://custom-activity-4spk.onrender.com/save",
        "verb": "POST",
        "useJwt": false
     },
     "publish": {
-      "url": "https://custom-activity-ubrc.onrender.com/publish",
+      "url": "https://custom-activity-4spk.onrender.com/publish",
       "verb": "POST",
       "useJwt": false
     },
     "validate": {
-      "url": "https://custom-activity-ubrc.onrender.com/validate",
+      "url": "https://custom-activity-4spk.onrender.com/validate",
       "verb": "POST",
       "useJwt": false
     },
     "stop": {
-      "url": "https://custom-activity-ubrc.onrender.com/stop",
+      "url": "https://custom-activity-4spk.onrender.com/stop",
       "verb": "POST",
       "useJwt": false
     }
   },
   "userInterfaces": {
     "configModal": {
-      "url": "https://custom-activity-ubrc.onrender.com/index.html",
+      "url": "https://custom-activity-4spk.onrender.com/index.html",
       "height": 400,
       "width": 600,
       "fullscreen": false
