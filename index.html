@@ -1,10 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Hola Mundo</title>
+  <title>Configurar SMS</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; color: #333; }
+    textarea { width: 95%; height: 150px; margin-top: 10px; padding: 8px; border: 1px solid #ccc; border-radius: 4px; }
+    label { font-weight: bold; }
+    p { font-size: 14px; }
+    code { background-color: #f4f4f4; padding: 2px 4px; border-radius: 3px; }
+  </style>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="js/require.js"></script>
+  
+  <script src="js/customActivity.js"></script>
 </head>
 <body>
-  <h1>Hola Mundo desde mi Custom Activity 🚀</h1>
-  <p>Esta es una prueba exitosa en Journey Builder.</p>
+  <h1>Configuración de SMS Personalizado 💬</h1>
+  <p>
+    Escribe el mensaje que recibirá el contacto. Puedes usar los campos de tu Data Extension 
+    arrastrándolos desde el menú de Journey Builder o escribiéndolos manualmente.
+    <br>
+    Por ejemplo: <code>Hola {{Contact.Attribute.NOMBRE_DE_TU_DE.FirstName}}</code>
+  </p>
+  <label for="sms-message">Mensaje:</label>
+  <textarea id="sms-message" placeholder="Escribe tu mensaje aquí..."></textarea>
 </body>
 </html>
