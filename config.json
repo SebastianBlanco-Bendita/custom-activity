@@ -2,43 +2,82 @@
   "workflowApiVersion": "1.1",
   "metaData": {
     "icon": "images/icon.png",
-    "category": "message"
+    "iconSmall": "images/iconSmall.png",
+    "category": "messaging"
   },
   "type": "REST",
   "lang": {
     "en-US": {
-      "name": "Custom Activity",
-      "description": "A simple custom activity for Journey Builder"
+      "name": "Custom SMS with DE Data",
+      "description": "Sends a personalized SMS using data from a Data Extension."
     }
   },
   "arguments": {
     "execute": {
-      "inArguments": [],
+      "inArguments": [
+        {
+          "message": "{{Interaction.REST-1.message}}",
+          "contactKey": "{{Contact.Key}}",
+          "email": "{{Contact.Attribute.NOMBRE_DE_TU_DE.Mail}}",
+          "firstName": "{{Contact.Attribute.NOMBRE_DE_TU_DE.FirstName}}",
+          "city": "{{Contact.Attribute.NOMBRE_DE_TU_DE.City}}",
+          "interestCategory": "{{Contact.Attribute.NOMBRE_DE_TU_DE.InterestCategory}}"
+        }
+      ],
       "outArguments": [],
       "url": "https://custom-activity-ubrc.onrender.com/execute",
       "verb": "POST",
       "body": "",
       "header": "",
       "format": "json",
-      "useJwt": false
+      "useJwt": false,
+      "timeout": 10000
     }
   },
   "configurationArguments": {
+    "applicationExtensionKey": "YOUR_APP_EXTENSION_KEY",
+    "save": {
+      "url": "https://custom-activity-ubrc.onrender.com/save",
+       "verb": "POST",
+       "useJwt": false
+    },
     "publish": {
-      "url": "https://custom-activity-ubrc.onrender.com/publish"
+      "url": "https://custom-activity-ubrc.onrender.com/publish",
+      "verb": "POST",
+      "useJwt": false
     },
     "validate": {
-      "url": "https://custom-activity-ubrc.onrender.com/validate"
+      "url": "https://custom-activity-ubrc.onrender.com/validate",
+      "verb": "POST",
+      "useJwt": false
     },
     "stop": {
-      "url": "https://custom-activity-ubrc.onrender.com/stop"
+      "url": "https://custom-activity-ubrc.onrender.com/stop",
+      "verb": "POST",
+      "useJwt": false
     }
   },
   "userInterfaces": {
     "configModal": {
       "url": "https://custom-activity-ubrc.onrender.com/index.html",
       "height": 400,
-      "width": 600
+      "width": 600,
+      "fullscreen": false
+    }
+  },
+  "schema": {
+    "arguments": {
+      "execute": {
+        "inArguments": [
+          { "message": { "dataType": "Text", "isNullable": false, "direction": "in" } },
+          { "contactKey": { "dataType": "Text", "isNullable": false, "direction": "in" } },
+          { "email": { "dataType": "Email", "isNullable": true, "direction": "in" } },
+          { "firstName": { "dataType": "Text", "isNullable": true, "direction": "in" } },
+          { "city": { "dataType": "Text", "isNullable": true, "direction": "in" } },
+          { "interestCategory": { "dataType": "Text", "isNullable": true, "direction": "in" } }
+        ],
+        "outArguments": []
+      }
     }
   }
 }
