@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Configurar SMS</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; color: #333; }
+    textarea { width: 95%; height: 150px; margin-top: 10px; padding: 8px; border: 1px solid #ccc; border-radius: 4px; }
+    label { font-weight: bold; }
+    p { font-size: 14px; }
+    code { background-color: #f4f4f4; padding: 2px 4px; border-radius: 3px; }
+  </style>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <h1>Configuración de SMS Personalizado 💬</h1>
+  <p>
+    Escribe el mensaje que recibirá el contacto. Puedes usar los campos de tu Data Extension 
+    arrastrándolos desde el menú de Journey Builder.
+  </p>
+  <label for="sms-message">Mensaje:</label>
+  <textarea id="sms-message" placeholder="Escribe tu mensaje aquí..."></textarea>
+
+  <script type="text/javascript">
+    (function() {
+      // Journey Builder usa RequireJS para cargar módulos de forma asíncrona.
+      // SFMC proporciona la URL base para el require.js.
+      var s = document.createElement('script');
+      s.type = 'text/javascript';
+      s.src = '/js/require.js';
+      s.onload = function() {
+        var config = {
+          paths: {
+            'jb_custom_activity': 'js/customActivity'
+          }
+        };
+        require(config, ['jb_custom_activity']);
+      };
+      document.head.appendChild(s);
+    })();
+  </script>
+</body>
+</html>
