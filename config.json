@@ -36,7 +36,7 @@
         }
     },
     "configurationArguments": {
-        "applicationExtensionKey": "YOUR_INSTALLED_PACKAGE_KEY",
+        "applicationExtensionKey": "1e12843e-1b6a-4415-a5ea-a025e0e5164",
         "save": {
             "url": "https://prismatic-otter-92aa70.netlify.app/save",
             "verb": "POST",
