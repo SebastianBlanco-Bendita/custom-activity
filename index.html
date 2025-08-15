@@ -11,33 +11,19 @@
   </style>
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="js/require.js"></script>
+  
+  <script src="js/customActivity.js"></script>
 </head>
 <body>
   <h1>Configuración de SMS Personalizado 💬</h1>
   <p>
     Escribe el mensaje que recibirá el contacto. Puedes usar los campos de tu Data Extension 
-    arrastrándolos desde el menú de Journey Builder.
+    arrastrándolos desde el menú de Journey Builder o escribiéndolos manualmente.
+    <br>
+    Por ejemplo: <code>Hola {{Contact.Attribute.NOMBRE_DE_TU_DE.FirstName}}</code>
   </p>
   <label for="sms-message">Mensaje:</label>
   <textarea id="sms-message" placeholder="Escribe tu mensaje aquí..."></textarea>
-
-  <script type="text/javascript">
-    (function() {
-      // Journey Builder usa RequireJS para cargar módulos de forma asíncrona.
-      // SFMC proporciona la URL base para el require.js.
-      var s = document.createElement('script');
-      s.type = 'text/javascript';
-      s.src = '/js/require.js';
-      s.onload = function() {
-        var config = {
-          paths: {
-            'jb_custom_activity': 'js/customActivity'
-          }
-        };
-        require(config, ['jb_custom_activity']);
-      };
-      document.head.appendChild(s);
-    })();
-  </script>
 </body>
 </html>
