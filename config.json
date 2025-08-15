@@ -60,7 +60,7 @@
     },
     "userInterfaces": {
         "configModal": {
-            "url": "https://YOUR_APP_URL.herokuapp.com/",
+            "url": "https://prismatic-otter-92aa70.netlify.app/",
             "height": 450,
             "width": 650,
             "fullscreen": false
