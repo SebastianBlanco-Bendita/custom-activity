@@ -1,14 +1,15 @@
 {
-  "name": "custom-activity",
+  "name": "gemini-custom-activity",
   "version": "1.0.0",
-  "description": "Journey Builder Custom Activity",
+  "description": "Journey Builder Custom Activity that sends Gemini-powered emails",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node -r dotenv/config index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "body-parser": "^2.2.0",
-    "express": "^5.1.0"
+    "@google/generative-ai": "^0.11.3",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
   }
 }

@@ -1,29 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Configurar SMS</title>
-  <style>
-    body { font-family: Arial, sans-serif; padding: 20px; color: #333; }
-    textarea { width: 95%; height: 150px; margin-top: 10px; padding: 8px; border: 1px solid #ccc; border-radius: 4px; }
-    label { font-weight: bold; }
-    p { font-size: 14px; }
-    code { background-color: #f4f4f4; padding: 2px 4px; border-radius: 3px; }
-  </style>
-
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="js/require.js"></script>
-  
-  <script src="js/customActivity.js"></script>
+    <title>Configure AI Email</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; color: #333; }
+        label { font-weight: bold; display: block; margin-top: 15px; }
+        textarea, select { width: 95%; margin-top: 5px; padding: 8px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px; }
+        textarea { height: 120px; }
+        p { font-size: 14px; color: #555; }
+        code { background-color: #f4f4f4; padding: 2px 4px; border-radius: 3px; font-family: monospace; }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/require.js"></script>
+    <script src="js/customActivity.js"></script>
 </head>
 <body>
-  <h1>Configuración de SMS Personalizado 💬</h1>
-  <p>
-    Escribe el mensaje que recibirá el contacto. Puedes usar los campos de tu Data Extension 
-    arrastrándolos desde el menú de Journey Builder o escribiéndolos manualmente.
-    <br>
-    Por ejemplo: <code>Hola {{Contact.Attribute.NOMBRE_DE_TU_DE.FirstName}}</code>
-  </p>
-  <label for="sms-message">Mensaje:</label>
-  <textarea id="sms-message" placeholder="Escribe tu mensaje aquí..."></textarea>
+    <h1>Configure Personalized AI Email 🤖📧</h1>
+    <p>
+        Define the core message and tone for the email. Gemini will use this, along with the contact's data (like <code>FirstName</code>, <code>City</code>, etc.), to generate a unique email for each person.
+    </p>
+
+    <label for="email-prompt">Core Message / Prompt:</label>
+    <textarea id="email-prompt" placeholder="Example: Inform the customer about our new summer collection and offer a 15% discount on products related to their main interest."></textarea>
+
+    <label for="email-tone">Tone of Voice:</label>
+    <select id="email-tone">
+        <option value="Friendly and Casual">Friendly and Casual</option>
+        <option value="Professional and Formal">Professional and Formal</option>
+        <option value="Enthusiastic and Upbeat">Enthusiastic and Upbeat</option>
+        <option value="Empathetic and Supportive">Empathetic and Supportive</option>
+    </select>
 </body>
 </html>

@@ -1,83 +1,85 @@
 {
-  "workflowApiVersion": "1.1",
-  "metaData": {
-    "icon": "images/icon.png",
-    "iconSmall": "images/iconSmall.png",
-    "category": "messaging"
-  },
-  "type": "REST",
-  "lang": {
-    "en-US": {
-      "name": "Custom SMS with DE Data",
-      "description": "Sends a personalized SMS using data from a Data Extension."
-    }
-  },
-  "arguments": {
-    "execute": {
-      "inArguments": [
-        {
-          "message": "{{Interaction.REST-1.message}}",
-          "contactKey": "{{Contact.Key}}",
-          "email": "{{Contact.Attribute.TestCustomActivity.Mail}}",
-          "firstName": "{{Contact.Attribute.TestCustomActivity.FirstName}}",
-          "city": "{{Contact.Attribute.TestCustomActivity.City}}",
-          "interestCategory": "{{Contact.Attribute.TestCustomActivity.InterestCategory}}"
+    "workflowApiVersion": "1.1",
+    "metaData": {
+        "icon": "images/icon.png",
+        "iconSmall": "images/iconSmall.png",
+        "category": "messaging"
+    },
+    "type": "REST",
+    "lang": {
+        "en-US": {
+            "name": "Gemini AI Personalized Email",
+            "description": "Generates and sends a unique email using Google's Gemini API and contact data."
         }
-      ],
-      "outArguments": [],
-      "url": "https://prismatic-otter-92aa70.netlify.app/execute",
-      "verb": "POST",
-      "body": "",
-      "header": "",
-      "format": "json",
-      "useJwt": false,
-      "timeout": 10000
-    }
-  },
-  "configurationArguments": {
-    "applicationExtensionKey": "1e112843e-1b6a-4415-a5ea-a025e0e5164",
-    "save": {
-      "url": "https://prismatic-otter-92aa70.netlify.app/save",
-       "verb": "POST",
-       "useJwt": false
     },
-    "publish": {
-      "url": "https://prismatic-otter-92aa70.netlify.app/publish",
-      "verb": "POST",
-      "useJwt": false
-    },
-    "validate": {
-      "url": "https://prismatic-otter-92aa70.netlify.app/validate",
-      "verb": "POST",
-      "useJwt": false
-    },
-    "stop": {
-      "url": "https://prismatic-otter-92aa70.netlify.app/stop",
-      "verb": "POST",
-      "useJwt": false
-    }
-  },
-  "userInterfaces": {
-    "configModal": {
-      "url": "https://prismatic-otter-92aa70.netlify.app/index.html",
-      "height": 400,
-      "width": 600,
-      "fullscreen": false
-    }
-  },
-  "schema": {
     "arguments": {
-      "execute": {
-        "inArguments": [
-          { "message": { "dataType": "Text", "isNullable": false, "direction": "in" } },
-          { "contactKey": { "dataType": "Text", "isNullable": false, "direction": "in" } },
-          { "email": { "dataType": "Email", "isNullable": true, "direction": "in" } },
-          { "firstName": { "dataType": "Text", "isNullable": true, "direction": "in" } },
-          { "city": { "dataType": "Text", "isNullable": true, "direction": "in" } },
-          { "interestCategory": { "dataType": "Text", "isNullable": true, "direction": "in" } }
-        ],
-        "outArguments": []
-      }
+        "execute": {
+            "inArguments": [
+                {
+                    "promptTemplate": "{{Interaction.REST-1.promptTemplate}}",
+                    "emailTone": "{{Interaction.REST-1.emailTone}}",
+                    "contactKey": "{{Contact.Key}}",
+                    "email": "{{Contact.Attribute.TestCustomActivity.Mail}}",
+                    "firstName": "{{Contact.Attribute.TestCustomActivity.FirstName}}",
+                    "city": "{{Contact.Attribute.TestCustomActivity.City}}",
+                    "interestCategory": "{{Contact.Attribute.TestCustomActivity.InterestCategory}}"
+                }
+            ],
+            "outArguments": [],
+            "url": "https://prismatic-otter-92aa70.netlify.app/execute",
+            "verb": "POST",
+            "body": "",
+            "header": "",
+            "format": "json",
+            "useJwt": false,
+            "timeout": 20000
+        }
+    },
+    "configurationArguments": {
+        "applicationExtensionKey": "YOUR_INSTALLED_PACKAGE_KEY",
+        "save": {
+            "url": "https://prismatic-otter-92aa70.netlify.app/save",
+            "verb": "POST",
+            "useJwt": false
+        },
+        "publish": {
+            "url": "https://prismatic-otter-92aa70.netlify.app/publish",
+            "verb": "POST",
+            "useJwt": false
+        },
+        "validate": {
+            "url": "https://prismatic-otter-92aa70.netlify.app/validate",
+            "verb": "POST",
+            "useJwt": false
+        },
+        "stop": {
+            "url": "https://prismatic-otter-92aa70.netlify.app/stop",
+            "verb": "POST",
+            "useJwt": false
+        }
+    },
+    "userInterfaces": {
+        "configModal": {
+            "url": "https://YOUR_APP_URL.herokuapp.com/",
+            "height": 450,
+            "width": 650,
+            "fullscreen": false
+        }
+    },
+    "schema": {
+        "arguments": {
+            "execute": {
+                "inArguments": [
+                    { "promptTemplate": { "dataType": "Text", "isNullable": false, "direction": "in" } },
+                    { "emailTone": { "dataType": "Text", "isNullable": false, "direction": "in" } },
+                    { "contactKey": { "dataType": "Text", "isNullable": false, "direction": "in" } },
+                    { "email": { "dataType": "Email", "isNullable": false, "direction": "in" } },
+                    { "firstName": { "dataType": "Text", "isNullable": true, "direction": "in" } },
+                    { "city": { "dataType": "Text", "isNullable": true, "direction": "in" } },
+                    { "interestCategory": { "dataType": "Text", "isNullable": true, "direction": "in" } }
+                ],
+                "outArguments": []
+            }
+        }
     }
-  }
 }
