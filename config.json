@@ -25,7 +25,7 @@
         }
       ],
       "outArguments": [],
-      "url": "https://prismatic-otter-92aa70.netlify.app//execute",
+      "url": "https://prismatic-otter-92aa70.netlify.app/execute",
       "verb": "POST",
       "body": "",
       "header": "",
@@ -37,17 +37,17 @@
   "configurationArguments": {
     "applicationExtensionKey": "1e112843e-1b6a-4415-a5ea-a025e0e5164",
     "save": {
-      "url": "https://prismatic-otter-92aa70.netlify.app//save",
+      "url": "https://prismatic-otter-92aa70.netlify.app/save",
        "verb": "POST",
        "useJwt": false
     },
     "publish": {
-      "url": "https://prismatic-otter-92aa70.netlify.app//publish",
+      "url": "https://prismatic-otter-92aa70.netlify.app/publish",
       "verb": "POST",
       "useJwt": false
     },
     "validate": {
-      "url": "https://prismatic-otter-92aa70.netlify.app//validate",
+      "url": "https://prismatic-otter-92aa70.netlify.app/validate",
       "verb": "POST",
       "useJwt": false
     },
@@ -59,7 +59,7 @@
   },
   "userInterfaces": {
     "configModal": {
-      "url": "https://prismatic-otter-92aa70.netlify.app//index.html",
+      "url": "https://prismatic-otter-92aa70.netlify.app/index.html",
       "height": 400,
       "width": 600,
       "fullscreen": false
